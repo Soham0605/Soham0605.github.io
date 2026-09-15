@@ -1,0 +1,229 @@
+:root {
+  --paper: #F7F7F4;
+  --ink: #1B1D1F;
+  --muted: #5B5F63;
+  --accent: #4B3F8C;
+  --line: #DDD9D2;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 72px 24px 56px;
+}
+
+h1, h2, h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  margin: 0;
+  color: var(--ink);
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  position: relative;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--line);
+}
+
+.lattice {
+  position: absolute;
+  top: -8px;
+  right: 0;
+}
+
+h1 {
+  font-size: 38px;
+  letter-spacing: -0.01em;
+  max-width: 480px;
+}
+
+.tagline {
+  margin: 14px 0 2px;
+  font-size: 17px;
+  color: var(--ink);
+}
+
+.subline {
+  margin: 0 0 22px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.contact-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-row a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 14px;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.contact-row a:hover,
+.contact-row a:focus-visible {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.contact-row svg { flex-shrink: 0; }
+
+/* ---------- Sections ---------- */
+
+.block {
+  padding-top: 36px;
+  margin-top: 36px;
+  border-top: 1px solid var(--line);
+}
+
+.block:first-of-type {
+  padding-top: 0;
+  margin-top: 0;
+  border-top: none;
+}
+
+h2 {
+  font-size: 20px;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.block p {
+  max-width: 62ch;
+  margin: 0 0 14px;
+}
+
+.block p:last-child { margin-bottom: 0; }
+
+.note {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ---------- Research entries ---------- */
+
+.entry { margin-bottom: 22px; }
+.entry:last-child { margin-bottom: 0; }
+
+.entry h3 {
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.entry p {
+  font-size: 15px;
+  color: var(--ink);
+}
+
+/* ---------- Lists ---------- */
+
+.pub-list, .edu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pub-list li, .edu-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+}
+
+.pub-list li:first-child, .edu-list li:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.pub-title, .edu-degree {
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.pub-meta, .edu-meta {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ---------- Skills ---------- */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.skills-grid h4 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 0 0 6px;
+}
+
+.skills-grid p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* ---------- Footer ---------- */
+
+.foot {
+  padding-top: 36px;
+  margin-top: 36px;
+  border-top: 1px solid var(--line);
+}
+
+.foot .contact-row a {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.foot .contact-row a:hover,
+.foot .contact-row a:focus-visible {
+  color: var(--accent);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 480px) {
+  .page { padding: 48px 20px 40px; }
+  h1 { font-size: 30px; }
+  .lattice { display: none; }
+  .skills-grid { grid-template-columns: 1fr; gap: 14px; }
+}
+
+/* ---------- Accessibility ---------- */
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
